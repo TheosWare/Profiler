@@ -67,6 +67,9 @@ Start making use of the API (Read below for more information)
           - ``` profile.setValue("Kills", 0); ```
 6. Save the client
      - ``` client.save(); ```
+     
+7. Set plugin.yml depend
+     - ``` depend: [Profiler] ```
 
 
 
