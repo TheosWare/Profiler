@@ -5,7 +5,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.profiler.managers.ClientManager;
 import com.profiler.managers.ConfigManager;
-import com.profiler.managers.EventManager;
 import com.profiler.managers.MysqlManager;
 
 public class Profiler extends JavaPlugin{
@@ -49,14 +48,6 @@ public class Profiler extends JavaPlugin{
 		}
 		
 		this.clientManager = new ClientManager();
-		
-		this.getServer().getPluginManager().registerEvents(new EventManager(), this);
-		
-		for(Player p : this.getServer().getOnlinePlayers())
-		{
-			this.getClientManager().addClient(p);
-		}
-		
 	}
 	
 	@Override

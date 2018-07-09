@@ -14,7 +14,7 @@ public class ClientManager {
 	public List<Client> getClients() { return this.clients; }
 	
 	public Client getClient(Player p) { return this.getClient(p.getUniqueId()); }
-	public Client getClient(UUID owner) { for(Client c : this.clients) { if(c.getOwnerUUID().equals(owner)) { return c; } } return null; }
+	public Client getClient(UUID owner) { for(Client c : this.clients) { if(c.getOwnerUUID().equals(owner)) { return c; } } Client c = new Client(owner); this.clients.add(c); return c; }
 	
 	public void addClient(UUID uuid) { Client c = this.getClient(uuid); if(c == null) { this.clients.add(new Client(uuid)); } }
 	public void addClient(Player p) { this.addClient(p.getUniqueId()); }
