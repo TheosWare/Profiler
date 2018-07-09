@@ -1,0 +1,5 @@
+name: Profiler
+version: 1.0
+description: hi.
+author: North
+main: com.profiler.main.Profiler
