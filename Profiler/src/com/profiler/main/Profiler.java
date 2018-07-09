@@ -51,7 +51,7 @@ public class Profiler extends JavaPlugin{
 		this.clientManager = new ClientManager();
 		
 		this.getServer().getPluginManager().registerEvents(new EventManager(), this);
-
+		
 		for(Player p : this.getServer().getOnlinePlayers())
 		{
 			this.getClientManager().addClient(p);
