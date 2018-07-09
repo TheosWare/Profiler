@@ -1,5 +1,6 @@
 package com.profiler.main;
 
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.profiler.managers.ClientManager;
@@ -51,6 +52,10 @@ public class Profiler extends JavaPlugin{
 		
 		this.getServer().getPluginManager().registerEvents(new EventManager(), this);
 
+		for(Player p : this.getServer().getOnlinePlayers())
+		{
+			this.getClientManager().addClient(p);
+		}
 		
 	}
 	
