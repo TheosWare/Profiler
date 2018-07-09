@@ -1,5 +1,5 @@
 name: Profiler
-version: 1.1
+version: 1.2
 description: Ultimate player data management
 author: Theo
 main: com.profiler.main.Profiler
