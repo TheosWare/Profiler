@@ -47,26 +47,26 @@ Start making use of the API (Read below for more information)
 ## How to use the API
 
 1. Get the profiler plugin instance
-     ``` Profiler profiler = (Profiler) this.getServer().getPluginManager().getPlugin("Profiler"); ```
+     - ``` Profiler profiler = (Profiler) this.getServer().getPluginManager().getPlugin("Profiler"); ```⋅⋅⋅
 2. Get the players Client instance
-     ``` Client client = profiler.getClientManager().getClient(Player); ```
+     - ``` Client client = profiler.getClientManager().getClient(Player); ```
 3. Get the profile
-     ``` Profile profile = client.getProfile("Stats"); ```
+     - ``` Profile profile = client.getProfile("Stats"); ```
 4. Check if the profile exists
-     ``` if(profile == null) ```
-          Create the profile
-               ``` profile = client.addProfile("Stats"); ```
-          Set the default values
-               ``` profile.setValue("Kills", 0); ```
-          Save the client
-               ``` client.save(); ```
+      - ``` if(profile == null) ```
+          + Create the profile
+               - ``` profile = client.addProfile("Stats"); ```
+          + Set the default values
+               - ``` profile.setValue("Kills", 0); ```
+          + Save the client
+               - ``` client.save(); ```
 5. Get/Set data
-     Get data
-          ``` profile.getValue("Kills"); ```
-     Set data
-          ``` profile.setValue("Kills", 0); ```
+     + Get data
+          - ``` profile.getValue("Kills"); ```
+     + Set data
+          - ``` profile.setValue("Kills", 0); ```
 6. Save the client
-     ``` client.save(); ```
+     - ``` client.save(); ```
 
 
 
