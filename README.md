@@ -81,7 +81,3 @@ Start making use of the API (Read below for more information)
 ## Authors
 
 * **Theos** - *Initial work* - [TheosWare](https://github.com/TheosWare)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
