@@ -14,6 +14,7 @@ import org.bukkit.configuration.MemorySection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -28,9 +29,11 @@ public class Client {
 	
 	private List<Profile> profiles = new ArrayList<Profile>();
 	public Profile getProfile(String name) { for(Profile p : profiles) { if(p.getName().equalsIgnoreCase(name)) { return p; } } return null; }
+	public Profile getProfile(Plugin pl) { return this.getProfile(pl.getName()); }
 	public List<Profile> getProfiles() { return this.profiles; }
 	
 	public Profile addProfile(String name) { Profile p = new Profile(name, this.owner); this.profiles.add(p); return p; }
+	public Profile addProfile(Plugin pl) { return this.addProfile(pl.getName()); }
 	public void addProfile(Profile p) {this.profiles.add(p);}
 	
 	
@@ -86,7 +89,6 @@ public class Client {
 				e.printStackTrace();
 			}
 		}else {
-			if(Profiler.getInstance().useLocalStorage()){
 				File f = new File(Profiler.getInstance().getDataFolder(), "/Clients/" +this.owner.toString() + ".yml");
 				if(!f.exists())
 				{
@@ -125,7 +127,7 @@ public class Client {
 					}
 					return true;
 				}
-			}
+			
 		}
 		
 		return false;
@@ -161,8 +163,7 @@ public class Client {
 				e.printStackTrace();
 			}
 			
-		}
-		if(Profiler.getInstance().useLocalStorage()){
+		}else {
 			this.save();
 		}
 	}
@@ -196,9 +197,8 @@ public class Client {
 			{
 				e.printStackTrace();
 			}
-		}
-		if(Profiler.getInstance().useLocalStorage()){
-			
+		}else {
+
 			File f = new File(Profiler.getInstance().getDataFolder(), "/Clients/" +this.owner.toString() + ".yml");
 			if(!f.exists())
 			{
@@ -227,6 +227,7 @@ public class Client {
 				}
 			}
 		}
+		
 	}
 
 }

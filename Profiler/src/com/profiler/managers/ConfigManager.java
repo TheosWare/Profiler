@@ -12,8 +12,6 @@ public class ConfigManager {
 	private Config mysqlConfig;
 	public Config getMysql() { return this.mysqlConfig; }
 	
-	private Config storageConfig;
-	public Config getStorage() { return this.storageConfig; }
 	
 	public ConfigManager()
 	{
@@ -27,6 +25,7 @@ public class ConfigManager {
 
 			@Override
 			public void defaultValues() {
+				this.setDefault("Enabled", false);
 				this.setDefault("Username", "root");
 				this.setDefault("Password", "");
 				this.setDefault("Host", "localhost");
@@ -42,20 +41,7 @@ public class ConfigManager {
 		}
 		
 		
-		this.storageConfig = new Config("Storage") {
-
-			@Override
-			public void defaultValues() {
-				this.setDefault("Mysql", false);
-				this.setDefault("Local", true);
-			}
-			
-		};
 		
-		if(!storageConfig.exists())
-		{
-			storageConfig.create();
-		}
 		
 	}
 

@@ -23,14 +23,9 @@ public class Profiler extends JavaPlugin{
 	
 	public boolean useMysqlStorage()
 	{
-		return (boolean) this.configManager.getStorage().getValue("Mysql");
+		return (boolean) this.configManager.getMysql().getValue("Enabled");
 	}
 	
-	public boolean useLocalStorage()
-	{
-		return (boolean) this.configManager.getStorage().getValue("Local");
-
-	}
 	
 	@Override
 	public void onEnable()
